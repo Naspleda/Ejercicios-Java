@@ -6,20 +6,6 @@ import java.util.Scanner;
 
 
 public class Ejercicio {
-
-    public void prueba(){
-        Scanner teclado = new Scanner(System.in);
-        int var = 0;
-        int tecla = teclado.nextInt();
-
-        do{
-            System.out.println("Ingrese un número para el vector N° " + (var + 1) + " :");
-            int tecla = teclado.nextInt();
-            vector[i] = tecla;
-
-        }while(tecla <= 0 || tecla >100)
-    }
-
     int[] vector;
 
     public void resolver() {
@@ -28,14 +14,17 @@ public class Ejercicio {
 
         for (int i = 0; i < vector.length; i++) {
 
-            System.out.println("Ingrese un número para el vector N° " + (i + 1) + " :");
+
+            System.out.println("Ingrese un numero para el vector N " + (i + 1) + " :");
             int tecla = teclado.nextInt();
 
-            if(tecla <= 0 || tecla >100){
-                System.out.println("Numero incorrecto. Ingrese entre 1 y 100");
+            while(tecla < 1 || tecla > 100){
+                System.out.println("Numero incorrecto. Ingrese entre 1 y 100 para el vector N "+(i+1)+ " :");
+                tecla = teclado.nextInt();
             }
 
             vector[i] = tecla;
+
         }
     }
 
@@ -47,8 +36,6 @@ public class Ejercicio {
 
     //constructor
     public Ejercicio(){
-        vector = new int[3];
+        vector = new int[10];
     }
 }
-
-
